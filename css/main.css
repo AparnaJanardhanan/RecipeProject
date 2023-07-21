@@ -506,6 +506,7 @@ Hero
 .hero-text {
   color: var(--white);
   text-align: center;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
 }
 
 @media only screen and (min-width: 768px) {
