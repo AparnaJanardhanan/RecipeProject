@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simply Recipes</title>
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="css/main.css" />
+
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-center">
+      <div class="nav-header">
+        <a href="index.html" class="nav-logo">
+          <span style="color: blue;">Simply</span><span>Recipes</span>
+        </a>
+        <button class="nav-btn btn">
+          <i class="fas fa-align-justify"></i>
+        </button>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active"> home </a>
+        <a href="about.html" class="nav-link"> about </a>
+        <a href="tags.html" class="nav-link"> tags </a>
+        <a href="recipes.html" class="nav-link"> recipes </a>
+
+        <div class="nav-link contact-link">
+          <a href="contact.html" class="btn"> contact </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <header class="hero">
+
+      <div class="hero-container">
+        <div class="hero-text">
+          <h1>simply recipes</h1>
+          <h4>no fluff, just recipes</h4>
+        </div>
+      </div>
+
+
+      <div class="w3-content" style="width: 100%; height: 100%">
+        <img class="mySlides" src="assets/slide1.jpeg">
+        <img class="mySlides" src="assets/slide2.png">
+        <img class="mySlides" src="assets/slide3.jpg">
+      </div>
+
+      <div class="w3-center">
+        <div class="w3-section">
+          <button class="w3-button" onclick="plusDivs(-1)">
+            < Prev</button>
+              <button class="w3-button" onclick="plusDivs(1)">Next ></button>
+        </div>
+        <!-- <button class="w3-button demo" onclick="currentDiv(1)">1</button> 
+          <button class="w3-button demo" onclick="currentDiv(2)">2</button> 
+          <button class="w3-button demo" onclick="currentDiv(3)">3</button>  -->
+      </div>
+
+    </header>
+
+    <section class="recipes-container">
+      <div class="tags-container">
+        <h4>recipes</h4>
+        <div class="tags-list">
+          <a href="tag-template.html">Beef (1)</a>
+          <a href="tag-template.html">Breakfast (2)</a>
+          <a href="tag-template.html">Carrots (3)</a>
+          <a href="tag-template.html">Food (4)</a>
+        </div>
+      </div>
+
+      <div class="recipes-list">
+        <a href="single-recipe.html" class="recipe">
+          <img src="assets/recipes/recipe-1.jpeg" class="img recipe-img" alt="" />
+          <h5>Carne Asada</h5>
+          <p>Prep : 15min | Cook : 5min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <img src="assets/recipes/recipe-2.jpeg" class="img recipe-img" alt="" />
+          <h5>Greek Ribs</h5>
+          <p>Prep : 15min | Cook : 5min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <img src="assets/recipes/recipe-3.jpeg" class="img recipe-img" alt="" />
+          <h5>Vegetable Soup</h5>
+          <p>Prep : 15min | Cook : 5min</p>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <img src="assets/recipes/recipe-4.jpeg" class="img recipe-img" alt="" />
+          <h5>Banana Pancakes</h5>
+          <p>Prep : 15min | Cook : 5min</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>
+      &copy; <span id="date"></span>
+      <span class="footer-logo">SimplyRecipes</span>
+    </p>
+  </footer>
+
+  <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+      showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = x.length }
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" w3-red", "");
+      }
+      x[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " w3-red";
+    }
+  </script>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>
